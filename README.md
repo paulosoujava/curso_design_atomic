@@ -213,14 +213,5 @@ PAGE usam os TEMPLATES E SOMENTE OS TEMPLATES
 <img src="https://raw.githubusercontent.com/paulosoujava/DesignAtomic/main/images/fluxo_atomic.png" width="648">
 
 
-
-# Clean Code
-
-<img src="https://raw.githubusercontent.com/paulosoujava/DesignAtomic/main/images/clean.png" width="648">
-
-
-<img src="https://raw.githubusercontent.com/paulosoujava/DesignAtomic/main/images/paste.png" width="648">
-
-
 Ah link para os design pattern em dart:
 https://github.com/paulosoujava/patterns_in_dart
