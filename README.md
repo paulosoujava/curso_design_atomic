@@ -111,9 +111,9 @@ Ui:
 
 ```
 
-    Neste caso qndo formos fazerr um  with TextBehaviour, temos que garantir que a classe extende um StatelessWidget
+Neste caso qndo formos fazerr um  with TextBehaviour, temos que garantir que a classe extende um StatelessWidget
 
-    renders: este sim vai nos renderizar o atomo com seu estado/estilo, usando o mxin acima
+renders: este sim vai nos renderizar o atomo com seu estado/estilo, usando o mxin acima
     
 ```
     class TextRender extends StatelessWidget with TextBehaviour 
