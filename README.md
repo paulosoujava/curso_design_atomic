@@ -144,6 +144,7 @@ Mas o que é o atomic design?
 É uma metodologia que foi desenvolvida por Brand Frost, que cobre tudo que é necessario para criar e manter sistemas de design eficazes.
 
 ```
+
 O Atomic Design detalha tudo o que é necessário para criar e manter sistemas de design robustos,
 permitindo que sua organização implemente UIs de maior qualidade e consistentes com mais rapidez
 do que nunca. Este livro apresenta uma metodologia para pensar em nossas IUs como hierarquias ponderadas,
@@ -152,6 +153,7 @@ o fluxo de trabalho de design e desenvolvimento de sua equipe.
 
 Fonte:
 https://bradfrost.com/
+
 ```
 
 Os cinco estágios do Atomic Design são:
