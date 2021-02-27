@@ -103,17 +103,21 @@ Ui:
     Na pasta atom temos as pastas:
     behaviours: Aqui estão nossos estilos, um grande mixin que usa o 'on' para nos dizer que precimos usa-lo em uma classe que implente 
     q que vem após o 'on':
+    
     ```
-    mixin TextBehaviour on StatelessWidget 
+        mixin TextBehaviour on StatelessWidget 
     ```
     Neste caso qndo formos fazerr um  with TextBehaviour, temos que garantir que a classe extende um StatelessWidget
 
- renders: este sim vai nos renderizar o atomo com seu estado/estilo, usando o mxin acima
+    renders: este sim vai nos renderizar o atomo com seu estado/estilo, usando o mxin acima
+    
     ```
     class TextRender extends StatelessWidget with TextBehaviour 
     ```
+  
   widgets: este são somente widgets que usaremos em nosso sistema, são classes que estendem o widget que 
   desejamos e passamos para o super da classe extendida o que desejamos alterar.
+  
   ```
   class AtomIcon extends Icon
   ```  
