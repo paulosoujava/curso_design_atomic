@@ -134,7 +134,7 @@ Play list:
 https://www.youtube.com/watch?v=ch3aVv2Vb5U&list=PL0fdn_Fh-H7x5s-VFTTPctQaJK6ie0qOx
 
 
-Links:
+Links para o Diagram drawio MODELO ATUAL, tende a mudar, até o final do cusro:
 https://drive.google.com/file/d/1NiIGzTaGkwVaYBStwweWI1P4XPEYVlrw/view?usp=sharing
 
 
