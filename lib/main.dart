@@ -1,5 +1,3 @@
-import 'package:atomic_design_class/core/behaviours/behaviours_states.dart';
-
 import 'package:flutter/material.dart';
 
 import 'core/enum/behaviors.dart';

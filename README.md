@@ -11,71 +11,23 @@ Abarodaremos:
 Atomic Design:  Atomos, Molécula, Organismo, Template, Page
 
 Definimos até agora as pastas dentro da lib:
-Core [ base, behavioursmenum]
+Core [ base, enum]
 Ui [atom [behaviours], [renders], [ widgets] ]
 
 
 Nossa  Core temos a pasta base, onde fica o contrato generic :
 ```
-abstract class Base<W, B, S> {
+abstract class BaseBuilder<W, B, S> {
   W render(B context, S s);
 }
 ```
 Devemos passar um Widget, BuildContext, Behaviour(um enum com os estados)
 
-Na pasta behaviours temos uma classe concreta que implementa o nosso contrato, nela definimos
-os métodos que DEVEM ser sobrescritos e o método render onde renderiza nosso atomo, com seu estilo/estado
-
-```
-class BehavioursStates implements Base<Widget, BuildContext, Behaviours> {
-  Widget whenRegular(BuildContext context, Behaviours behaviours) {
-    debugPrint('$this does not implements behaviours.REGULAR');
-    return whenRegular(context, behaviours);
-  }
-
-  Widget whenSuccess(BuildContext context, Behaviours behaviours) {
-    debugPrint('$this does not implements behaviours.SUCCESS');
-    return whenSuccess(context, behaviours);
-  }
-
-  Widget whenInfo(BuildContext context, Behaviours behaviours) {
-    debugPrint('$this does not implements behaviours.INFO');
-    return whenInfo(context, behaviours);
-  }
-
-  Widget whenWarning(BuildContext context, Behaviours behaviours) {
-    debugPrint('$this does not implements behaviours.WARNING');
-    return whenWarning(context, behaviours);
-  }
-
-  Widget whenError(BuildContext context, Behaviours behaviours) {
-    debugPrint('$this does not implements behaviours.ERROR');
-    return whenError(context, behaviours);
-  }
-
-  Widget render(BuildContext context, Behaviours behaviours) {
-    switch (behaviours) {
-      case Behaviours.REGULAR:
-        return whenRegular(context, behaviours);
-      case Behaviours.INFO:
-        return whenInfo(context, behaviours);
-      case Behaviours.WARNING:
-        return whenWarning(context, behaviours);
-      case Behaviours.SUCCESS:
-        return whenSuccess(context, behaviours);
-      case Behaviours.ERROR:
-        return whenError(context, behaviours);
-      default:
-        return whenRegular(context, behaviours);
-    }
-  }
-}
-
-```
+N
 
 
 
-Na pasta enum, adivinha o que temos?? Um enum rss
+Na pasta enum, adivinha o que temos?? Um enum rss mas não se engane pois ele é quem dita o estilo ou comportamento a se seguir
 ```
 enum Behaviours {
   REGULAR,
@@ -112,17 +64,19 @@ Ui:
 
 ```
 
-Neste caso qndo formos fazerr um  with TextBehaviour, temos que garantir que a classe extende um StatelessWidget
+Neste caso qndo formos fazer um  with TextBehaviour, temos que garantir que a classe extende um StatelessWidget 
 
-renders: este sim vai nos renderizar o atomo com seu estado/estilo, usando o mxin acima
+renders: este sim vai nos renderizar o atomo com seu estado/estilo, usando o mxin acima e também 
+temos que trazer nosso método da abstract class BaseBuilder por isso usamos o BaseBuilder<Widget, BuildContext, Behaviours> 
     
 ```
-    class TextRender extends StatelessWidget with TextBehaviour 
+    class TextRender extends StatelessWidget with TextBehaviour, BaseBuilder<Widget, BuildContext, Behaviours> 
 
 ```
   
   widgets: este são somente widgets que usaremos em nosso sistema, são classes que estendem o widget que 
-  desejamos e passamos para o super da classe extendida o que desejamos alterar.
+  desejamos e passamos para o super da classe extendida o que desejamos alterar. Mas cuidado pois tem
+  widgets MENTIROSOS que na realidade são moléculas
   
 ```
 
@@ -132,10 +86,6 @@ renders: este sim vai nos renderizar o atomo com seu estado/estilo, usando o mxi
 
 Play list:  
 https://www.youtube.com/watch?v=ch3aVv2Vb5U&list=PL0fdn_Fh-H7x5s-VFTTPctQaJK6ie0qOx
-
-
-Links para o Diagram drawio MODELO ATUAL, tende a mudar, até o final do cusro:
-https://drive.google.com/file/d/1NiIGzTaGkwVaYBStwweWI1P4XPEYVlrw/view?usp=sharing
 
 
 # Atomic Design

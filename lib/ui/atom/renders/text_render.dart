@@ -1,9 +1,10 @@
+import 'package:atomic_design_class/core/base/base.dart';
 import 'package:atomic_design_class/core/enum/behaviors.dart';
 import 'package:atomic_design_class/ui/atom/behaviours/text_behaviour.dart';
 import 'package:atomic_design_class/ui/atom/widgets/atom_text.dart';
 import 'package:flutter/material.dart';
 
-class TextRender extends StatelessWidget with TextBehaviour {
+class TextRender extends StatelessWidget with TextBehaviour, BaseBuilder<Widget, BuildContext, Behaviours> {
   final String data;
   final Behaviours behaviours;
 
@@ -16,6 +17,7 @@ class TextRender extends StatelessWidget with TextBehaviour {
     return render(context, behaviours);
   }
 
+  @override
   Widget render(BuildContext context, Behaviours behaviours) {
     switch (behaviours) {
       case Behaviours.SUCCESS:
