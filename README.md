@@ -10,21 +10,21 @@ A ideia é apresentar o atomic design criado por Brad Frost. (te explico o que �
 Vamos trazer esta ideia para o flutter.
 Já iniciamos as aulas e este será o repositório constantemente alterado.
 Abordaremos:
-## Atomic Design:  Atomos, Molécula, Organismo, Template, Page
+ Atomic Design:  Atomos, Molécula, Organismo, Template, Page
 
-## Seguiremos os princípios:
-##  Aplicado : YAGNI. KISS. DRY
-## YAGNI => You Aren't Gonna Need It
+ Seguiremos os princípios:
+  Aplicado : YAGNI. KISS. DRY
+# YAGNI => You Aren't Gonna Need It
 É uma orientação que sugere, não adicionar funcionalidades
  ao código até que estas sejam realmente necessárias
 
-## KISS => Keep it Simple Stupid
+# KISS => Keep it Simple Stupid
 Simplifique o máximo possível reduzindo o tamanho das funções, 
 organizando melhor o código evitando criar coisas desnecessárias
 
-## DRY => Don't repeat yourself
+# DRY => Don't repeat yourself
 Torne o código menos ambíguo possível além de não repetir trecho de códigos
-## Pastas
+# Pastas
 Definimos até agora as pastas dentro da lib:
 Core [ base, enum]
 Ui [atom [behaviours], [renders], [ widgets] ]
