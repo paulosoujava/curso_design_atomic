@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 // este mixin só pode ser usado a classe que estendem StatelessWidget por q?
 // precisamos do method build para renderizar e isto vai nos garantir o build
-
+//assim “bloqueamos” o uso do mixin para uma classe e
+// todas as classes que dele herdaram
 mixin TextBehaviour on StatelessWidget {
   static final double fontSize = 18;
 
