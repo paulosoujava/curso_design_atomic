@@ -99,6 +99,10 @@ temos que trazer nosso método da abstract class BaseBuilder por isso usamos o B
 
 ```
 
+
+<img src="https://raw.githubusercontent.com/paulosoujava/curso_design_atomic/main/asstes/images/core.png" width="648">
+
+
 Play list:  
 https://www.youtube.com/watch?v=ch3aVv2Vb5U&list=PL0fdn_Fh-H7x5s-VFTTPctQaJK6ie0qOx
 
