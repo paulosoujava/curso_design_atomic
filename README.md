@@ -179,6 +179,12 @@ estados aqui, exemplo, LOADING
 Um Template pode conter Atom, Molécula e Organismo, !! NÃO COLOQUE TEMPLATE DENTRO DE TEMPLATE !!
 PAGE usam os TEMPLATES E SOMENTE OS TEMPLATES
 
+## IMPORTANTE
+Apesar de os Templates poder ter átomos, moléculas e organismos, e até mesmo templates, que dita isso é você,
+neste curso, resstringimos as coisas, Page só pode RENDERIZAR templates, templates só podem RENDERIZAR organismos,
+organismos, pode conter a si mesmo, moléculas e atoms, moléculas pode ter a sim mesmo e atoms, atomos só atoms, definimos também 
+os estados e comportamentos nos Átomos e Moléculas!!
+
 <img src="https://raw.githubusercontent.com/paulosoujava/DesignAtomic/main/images/fluxo_atomic.png" width="648">
 
 
