@@ -1,6 +1,8 @@
 # Atomic Design 
 
 <img src="https://miro.medium.com/max/2625/1*V5oi-JrH4RlEQuYdVrQXig.png" width="648">
+
+
 E ai FLUmiguinhos tudo bem com vocês?
 
 Este curso é do meu canal no youtube, chamado evoluindo juntos.
@@ -12,18 +14,16 @@ Abordaremos:
 
 ## Seguiremos os princípios:
 ##  Aplicado : YAGNI. KISS. DRY
+## YAGNI => You Aren't Gonna Need It
+É uma orientação que sugere, não adicionar funcionalidades
+ ao código até que estas sejam realmente necessárias
 
-YAGNI => You Aren't Gonna Need It
-É uma orientação qie sigetre, não adicionar funionalidades ap código
-até que estas sejam realmente necessárias
+## KISS => Keep it Simple Stupid
+Simplifique o máximo possível reduzindo o tamanho das funções, 
+organizando melhor o código evitando criar coisas desnecessárias
 
-KISS => Keep it Simple Stupid
-Simplifique o máxim possível reduzindo o tamanho das funções organizando melhor
-o códifo até que estás sejam realmente necessário
-
-DRY => Don't repeat yourself
+## DRY => Don't repeat yourself
 Torne o código menos ambíguo possível além de não repetir trecho de códigos
-
 ## Pastas
 Definimos até agora as pastas dentro da lib:
 Core [ base, enum]
