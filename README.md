@@ -4,12 +4,27 @@
 E ai FLUmiguinhos tudo bem com vocês?
 
 Este curso é do meu canal no youtube, chamado evoluindo juntos.
-A idieia é apresentar o atomic design criado por Brad Frost. (Não sabe o que, no final deste texto te falo)
-Vamor trazer esta ideia para o flutter.
+A ideia é apresentar o atomic design criado por Brad Frost. (te explico o que é no final do texto).
+Vamos trazer esta ideia para o flutter.
 Já iniciamos as aulas e este será o repositório constantemente alterado.
-Abarodaremos:
-Atomic Design:  Atomos, Molécula, Organismo, Template, Page
+Abordaremos:
+## Atomic Design:  Atomos, Molécula, Organismo, Template, Page
 
+## Seguiremos os princípios:
+##  Aplicado : YAGNI. KISS. DRY
+
+YAGNI => You Aren't Gonna Need It
+É uma orientação qie sigetre, não adicionar funionalidades ap código
+até que estas sejam realmente necessárias
+
+KISS => Keep it Simple Stupid
+Simplifique o máxim possível reduzindo o tamanho das funções organizando melhor
+o códifo até que estás sejam realmente necessário
+
+DRY => Don't repeat yourself
+Torne o código menos ambíguo possível além de não repetir trecho de códigos
+
+## Pastas
 Definimos até agora as pastas dentro da lib:
 Core [ base, enum]
 Ui [atom [behaviours], [renders], [ widgets] ]
