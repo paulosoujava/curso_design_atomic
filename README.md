@@ -103,6 +103,12 @@ temos que trazer nosso método da abstract class BaseBuilder por isso usamos o B
 <img src="https://raw.githubusercontent.com/paulosoujava/curso_design_atomic/main/asstes/images/core.png" width="648">
 
 
+
+# FLUXO
+
+<img src="https://raw.githubusercontent.com/paulosoujava/curso_design_atomic/main/asstes/images/fluxo.png" width="648">
+
+
 Play list:  
 https://www.youtube.com/watch?v=ch3aVv2Vb5U&list=PL0fdn_Fh-H7x5s-VFTTPctQaJK6ie0qOx
 
@@ -186,6 +192,8 @@ organismos, pode conter a si mesmo, moléculas e atoms, moléculas pode ter a si
 os estados e comportamentos nos Átomos e Moléculas!!
 
 <img src="https://raw.githubusercontent.com/paulosoujava/DesignAtomic/main/images/fluxo_atomic.png" width="648">
+
+
 
 
 Ah link para os design pattern em dart:
