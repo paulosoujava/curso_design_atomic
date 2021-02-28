@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'core/enum/behaviors.dart';
-import 'ui/atom/renders/text_render.dart';
+import 'core/index.dart';
+import 'ui/atom/index.dart';
 
 void main() {
   runApp(MyApp());

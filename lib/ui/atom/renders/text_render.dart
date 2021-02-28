@@ -1,8 +1,8 @@
-import 'package:atomic_design_class/core/base/base.dart';
-import 'package:atomic_design_class/core/enum/behaviors.dart';
-import 'package:atomic_design_class/ui/atom/behaviours/text_behaviour.dart';
-import 'package:atomic_design_class/ui/atom/widgets/atom_text.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/index.dart';
+
+import '../index.dart';
 
 class TextRender extends StatelessWidget with TextBehaviour, BaseBuilder<Widget, BuildContext, Behaviours> {
   final String data;
