@@ -113,6 +113,133 @@ Play list:
 https://www.youtube.com/watch?v=ch3aVv2Vb5U&list=PL0fdn_Fh-H7x5s-VFTTPctQaJK6ie0qOx
 
 
+
+
+
+# CICLO DE VIDA DE UM WIDGET
+createState()
+mounted == true
+initState()
+didChangeDependencies()
+build()
+didUpdateWidget()
+setState()
+deactivate()
+dispose()
+mounted == false
+
+## 1 - createState ()
+ Quando o Flutter é instruído a construir um StatefulWidget, ele chama imediatamente createState().
+ Este método deve existir. Um StatefulWidget raramente precisa ser mais complicado do que isso.
+
+```
+    class MyHomePage extends StatefulWidget {
+      @override
+      _MyHomePageState createState() => new _MyHomePageState();
+    }
+
+```
+
+## 2. montado é verdade
+Ao createState criar a classe de estado, um buildContexté atribuído a esse estado.
+A BuildContexté, excessivamente simplificado, o local na árvore de widgets em que esse widget é colocado.
+Aqui está uma explicação mais longa. Todos os widgets possuem uma bool this.mountedpropriedade. 
+Acontece truequando o buildContexté atribuído.  É um erro chamar setStatequando um widget é desmontado. 
+ dica: esta propriedade é útil quando um método em seu estado é chamado, setState() 
+mas não está claro quando ou com que frequência esse método será chamado. Talvez esteja sendo chamado em resposta a 
+uma atualização de fluxo. Você pode usar if (mounted) {... para verificar se o estado existe antes de ligar setState().
+
+
+
+
+## 3. initState ()
+Este é o primeiro método chamado quando o widget é criado (após o construtor da classe, é claro).
+
+initStateé chamado uma vez e apenas uma vez . Ele também deve chamar super.initState().
+
+Este @overridemétodo é a melhor hora para:
+
+Inicialize os dados que dependem do BuildContext específico para a instância criada do widget.
+Inicialize propriedades que dependem desse widget 'pai' na árvore.
+Assine Streams, ChangeNotifiers ou qualquer outro objeto que pode alterar os dados neste widget.
+
+```
+  @override
+  initState() {
+    super.initState();
+    // Add listeners to this class
+    cartItemStream.listen((data) {
+      _updateWidget(data);
+    });
+  }
+```
+## 4. didChangeDependencies ()
+O método didChangeDependencies é chamado imediatamente após initStatea primeira vez que o widget é construído.
+Ele também será chamado sempre que um objeto do qual esse widget depende dos dados for chamado. Por exemplo, 
+se ele depende de um InheritedWidget, que é atualizado.
+buildé sempre chamado depois de didChangeDependenciesser chamado, então isso raramente é necessário. No entanto, 
+esse método é a primeira alteração que você deve chamar BuildContext.inheritFromWidgetOfExactType. 
+Isso essencialmente faria com que este estado 'ouvisse' as alterações em um widget do qual está herdando dados.
+Os documentos também sugerem que pode ser útil se você precisar fazer chamadas de rede (ou qualquer outra ação cara)
+ quando um InheritedWidget é atualizado
+
+
+## 5. build ()
+Este método é chamado frequentemente (pense em fps + render). É obrigatório @overridee deve retornar um Widget.
+Lembre-se que no Flutter all gui é um widget com um filho ou filhos, até mesmo 'Padding' , 'Center' 
+
+
+
+## 6. didUpdateWidget (Widget oldWidget)
+didUpdateWidget()é chamado se o widget pai muda e precisa reconstruir este widget (porque precisa fornecer dados diferentes),
+ mas está sendo reconstruído com o mesmo runtimeType, então este método é chamado.
+Isso ocorre porque o Flutter está reutilizando o state, que é de longa duração. Nesse caso, é necessário inicializar alguns dados novamente, 
+como faria em initState().
+Se o build()método do estado depende de um Stream ou outro objeto que pode mudar, cancele a assinatura do objeto antigo e assine novamente a
+ nova instância em didUpdateWidget().
+dica : Este método é basicamente a substituição de 'initState ()' se for esperado que o Widgetassociado com os statenrrds dos widgets seja reconstruído!
+Flutter sempre é chamado build()depois disso, portanto, todas as chamadas subsequentes para setStatesão redundantes.
+
+```
+@override
+void didUpdateWidget(Widget oldWidget) {
+  if (oldWidget.importantProperty != widget.importantProperty) {
+    _init();
+  }
+}
+```
+
+## 7. setState ()
+O método 'setState ()' é frequentemente chamado a partir da própria estrutura do Flutter e do desenvolvedor.
+
+É usado para notificar a estrutura de que "os dados foram alterados", e o widget build contextdeve ser reconstruído.
+
+setState()recebe um retorno de chamada que não pode ser assíncrono . É por esta razão que pode ser chamado frequentemente
+
+ conforme necessário, porque repintar é barato :-)
+```
+  void updateProfile(String name) {
+  setState(() => this.name = name);
+  }
+```
+
+## 8. desativar ()
+Isso raramente é usado.
+'deactivate ()' é chamado quando Stateé removido da árvore, mas pode ser reinserido antes que a alteração do quadro 
+atual seja concluída. Esse método existe basicamente porque os Stateobjetos podem ser movidos de um ponto para outro em uma árvore.
+
+
+## 9. dispor ()
+'dispose ()' é chamado quando o Stateobjeto é removido, o que é permanente.
+Este método é onde cancelar e cancelar todas as animações, streams, etc.
+
+
+## 10. montado é falso
+O stateobjeto nunca pode remontar e um erro é lançado setState()é chamado.
+
+
+
+
 # Atomic Design
 
 Mas o que é o atomic design?
