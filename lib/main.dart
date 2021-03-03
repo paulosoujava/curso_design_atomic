@@ -36,8 +36,6 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   int _counterCheck = 0;
   List<Behaviors> list = [
-    Behaviors.ACTIVE,
-    Behaviors.INACTIVE,
     Behaviors.SUCCESS,
     Behaviors.ERROR,
     Behaviors.INFO,
