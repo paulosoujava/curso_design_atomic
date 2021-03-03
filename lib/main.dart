@@ -69,6 +69,13 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            TextRender(
+              behaviors: list[_counter],
+              data: 'MOLECULE',
+            ),
+            SizedBox(
+              height: 10,
+            ),
             InkWell(
               onTap: () {
                 _incrementCounterCheck();
@@ -78,9 +85,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 behaviours: listCheckbox[_counterCheck],
               ),
             ),
+            SizedBox(
+              height: 90,
+            ),
+            TextRender(
+              behaviors: list[_counter],
+              data: 'ATOMS',
+            ),
             IconRender(
               behaviors: list[_counter],
               data: 'texto de acessibilidade',
+            ),
+            SizedBox(
+              height: 10,
             ),
             TextRender(
               behaviors: list[_counter],
