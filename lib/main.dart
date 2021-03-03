@@ -42,8 +42,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Behaviors.WARNING,
   ];
   List<Behaviors> listCheckbox = [
-    Behaviors.ACTIVE,
     Behaviors.INACTIVE,
+    Behaviors.ACTIVE,
   ];
   void _incrementCounter() {
     setState(() {
