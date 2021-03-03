@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             IconRender(
               behaviors: list[_counter],
-              data: 'Você apertou $_counter vez${_counter >= 1 ? 'es' : ''}',
+              data: 'texto de acessibilidade',
             ),
             TextRender(
               behaviors: list[_counter],
