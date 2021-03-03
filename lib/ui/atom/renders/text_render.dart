@@ -4,38 +4,39 @@ import '../../../core/index.dart';
 
 import '../index.dart';
 
-class TextRender extends StatelessWidget with TextBehaviour, BaseBuilder<Widget, BuildContext, Behaviours> {
+class TextRender extends StatelessWidget with TextBehaviour, BaseBuilder<Widget, BuildContext, Behaviors> {
   final String data;
-  final Behaviours behaviours;
+  final Behaviors behaviors;
 
-  TextRender({this.data, this.behaviours})
-      : assert(behaviours != null, 'Precisamos do  behaviours'),
+  TextRender({this.data, this.behaviors})
+      : assert(behaviors != null, 'Precisamos do  behaviours'),
         assert(data != null, "Required data");
 
   @override
   Widget build(BuildContext context) {
-    return render(context, behaviours);
+    return render(context, behaviors);
   }
 
   @override
-  Widget render(BuildContext context, Behaviours behaviours) {
+  Widget render(BuildContext context, Behaviors behaviours) {
     switch (behaviours) {
-      case Behaviours.SUCCESS:
+      case Behaviors.SUCCESS:
         return AtomText(
           data: data,
+          maxLines: 3,
           style: success(),
         );
-      case Behaviours.INFO:
+      case Behaviors.INFO:
         return AtomText(
           data: data,
           style: info(),
         );
-      case Behaviours.WARNING:
+      case Behaviors.WARNING:
         return AtomText(
           data: data,
           style: warning(),
         );
-      case Behaviours.ERROR:
+      case Behaviors.ERROR:
         return AtomText(
           data: data,
           style: error(),

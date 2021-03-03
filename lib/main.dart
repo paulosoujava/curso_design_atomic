@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'core/index.dart';
 import 'ui/atom/index.dart';
+import 'ui/molecule/index.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,12 +34,30 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  List<Behaviours> list = [Behaviours.SUCCESS, Behaviours.ERROR, Behaviours.INFO, Behaviours.WARNING];
-
+  int _counterCheck = 0;
+  List<Behaviors> list = [
+    Behaviors.ACTIVE,
+    Behaviors.INACTIVE,
+    Behaviors.SUCCESS,
+    Behaviors.ERROR,
+    Behaviors.INFO,
+    Behaviors.WARNING,
+  ];
+  List<Behaviors> listCheckbox = [
+    Behaviors.ACTIVE,
+    Behaviors.INACTIVE,
+  ];
   void _incrementCounter() {
     setState(() {
       ++_counter;
-      _counter = (_counter <= 3) ? _counter : 0;
+      _counter = (_counter <= 5) ? _counter : 0;
+    });
+  }
+
+  void _incrementCounterCheck() {
+    setState(() {
+      ++_counterCheck;
+      _counterCheck = (_counterCheck <= 1) ? _counterCheck : 0;
     });
   }
 
@@ -52,8 +71,21 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            InkWell(
+              onTap: () {
+                _incrementCounterCheck();
+                setState(() {});
+              },
+              child: CheckboxRender(
+                behaviours: listCheckbox[_counterCheck],
+              ),
+            ),
+            IconRender(
+              behaviors: list[_counter],
+              data: 'Você apertou $_counter vez${_counter >= 1 ? 'es' : ''}',
+            ),
             TextRender(
-              behaviours: list[_counter],
+              behaviors: list[_counter],
               data: 'Você apertou $_counter vez${_counter >= 1 ? 'es' : ''}',
             ),
           ],

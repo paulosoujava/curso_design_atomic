@@ -1,18 +1,22 @@
-enum Behaviours {
+enum Behaviors {
   REGULAR,
-  LAODING,
+  LOADING,
   ERROR,
   SUCCESS,
   INFO,
   WARNING,
   DISABLED,
+  ACTIVE,
+  INACTIVE,
 }
 
-mixin BehavioursEnum {
-  Behaviours get bRegular => Behaviours.REGULAR;
-  get bLoading => Behaviours.LAODING;
-  get bError => Behaviours.ERROR;
-  get bSuccess => Behaviours.SUCCESS;
-  get bInfo => Behaviours.INFO;
-  get bDisabled => Behaviours.DISABLED;
+mixin BehaviorsEnum {
+  Behaviors get bRegular => Behaviors.REGULAR;
+  get bLoading => Behaviors.LOADING;
+  get bError => Behaviors.ERROR;
+  get bSuccess => Behaviors.SUCCESS;
+  get bInfo => Behaviors.INFO;
+  get bDisabled => Behaviors.DISABLED;
+  get bActive => Behaviors.ACTIVE;
+  get bInactive => Behaviors.INACTIVE;
 }
